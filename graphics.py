@@ -30,7 +30,7 @@ def generate_z(theta):
 ###########################
 # convert world coordinates to screen
 # cx, cy - viewport x, y
-def world_2_screen(point: tuple, cx: float, cy: float, rotation: list, zoom_in_factor: float):
+def world_2_screen(point: tuple, cx: float, cy: float, rotation: list, scale: float):
     point = matrix((
         (point[0], point[1], point[2])
     )).transpose()
@@ -41,8 +41,8 @@ def world_2_screen(point: tuple, cx: float, cy: float, rotation: list, zoom_in_f
 
     # project to screen    
     x, y = point[0], point[1]
-    x = int((x - cx) * zoom_in_factor) + 500
-    y = int((y - cy) * zoom_in_factor) + 300
+    x = int((x - cx) * scale) + 500
+    y = int((y - cy) * scale) + 300
 
     return x, y
 

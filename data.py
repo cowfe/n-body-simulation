@@ -17,4 +17,4 @@ class Config:
     screen_size: tuple          # size (width, height)
     background_image: object    # background image instance
     rotation: tuple             # [x, y, z] rotation
-    zoom_in_factor: float       # screen zoom in control
+    scale: float                # screen zoom in control

@@ -9,11 +9,11 @@ import physics, graphics
 # Drawing
 ###########################
 # draw a planet
-def draw_planet(screen, planet: Planet, point: tuple, cx: float, cy: float, rotation: tuple, zoom_in_factor: float):
+def draw_planet(screen, planet: Planet, point: tuple, cx: float, cy: float, rotation: tuple, scale: float):
     length = int(planet.radius * 2)
     size = (length, length)
     resized_image = pygame.transform.scale(planet.image, size)
-    x, y = graphics.world_2_screen(point, cx, cy, rotation, zoom_in_factor)
+    x, y = graphics.world_2_screen(point, cx, cy, rotation, scale)
     radius = planet.radius
     screen.blit(resized_image, (x - radius, y - radius))
     return x, y
@@ -72,7 +72,7 @@ def simulate(planets: List[Planet], config: Config):
             x, y = draw_planet(screen, planet=planets[i], point=positions[i], 
                                cx=cx, cy=cy, 
                                rotation=config.rotation,
-                               zoom_in_factor=config.zoom_in_factor)
+                               scale=config.scale)
             
             # save last position for trace drawing
             traces[i].append((x, y))

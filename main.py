@@ -23,7 +23,7 @@ def single():
                 screen_size=(1000, 800), 
                 background_image=image_universe,
                 rotation=[0, 0, 0],
-                zoom_in_factor=8)
+                scale=8)
 
     return planets, config
 
@@ -40,7 +40,7 @@ def dual():
                 screen_size=(1000, 800), 
                 background_image=image_universe,
                 rotation=[0, 0, 0],
-                zoom_in_factor=6)
+                scale=6)
 
     return planets, config
 
@@ -58,7 +58,7 @@ def three_1():
                 screen_size=(1000, 800), 
                 background_image=image_universe,
                 rotation=[0, 0, 0],
-                zoom_in_factor=10)
+                scale=10)
 
     return planets, config
 
@@ -77,7 +77,7 @@ def three_2():
                 screen_size=(1000, 800), 
                 background_image=image_universe,
                 rotation=[0, 0, 0],
-                zoom_in_factor=10)
+                scale=10)
 
     return planets, config
 
@@ -95,7 +95,7 @@ def three_3():
                 screen_size=(1000, 800), 
                 background_image=image_universe,
                 rotation=[0, 0, 0],
-                zoom_in_factor=10)
+                scale=10)
 
     return planets, config
 
@@ -114,7 +114,7 @@ def three_4():
                 screen_size=(1000, 800), 
                 background_image=image_universe,
                 rotation=[1.1, 0.2, 0],
-                zoom_in_factor=10)
+                scale=10)
 
     return planets, config
 
@@ -134,12 +134,12 @@ def solar():
 
     # check Config class definition
     config = Config(
-                dt=1.5, 
+                dt=2.5, 
                 trace_line_length=500, 
                 screen_size=(1000, 800), 
                 background_image=image_universe,
-                rotation=[1.1, 0.2, 0],
-                zoom_in_factor=2.7)
+                rotation=[1.0, 0.2, 0.0],
+                scale=2.7)
 
     return planets, config
 
