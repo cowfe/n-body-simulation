@@ -113,8 +113,29 @@ def three_4():
                 trace_line_length=70, 
                 screen_size=(1000, 800), 
                 background_image=image_universe,
-                rotation=[1.1, 0.2, 0],
+                rotation=[0.0, 0.0, 0],
                 scale=10)
+
+    return planets, config
+
+def three_5():
+    planets = [
+        Planet(type='SUN', mass=5, position=[15.0, 0.0, 0.0], velocity=[0.15, 0.0, 0.0], image=image_sun, radius=10, trace_color=(206, 66, 87)),
+        Planet(type='EARTH', mass=0.00001, position=[15.0, 5.0, 0.0], velocity=[-0.9, 0.0, 0.0], image=image_earth, radius=5, trace_color=(0, 100, 150)),
+
+        Planet(type='SUN', mass=5, position=[-15.0, 60.0, 0.0], velocity=[-0.15, 0.0, 0.0], image=image_sun, radius=10, trace_color=(206, 66, 87)),
+        Planet(type='EARTH', mass=0.00001, position=[-15.0, 65.0, 0.0], velocity=[0.9, 0.0, 0.0], image=image_earth, radius=5, trace_color=(10, 80, 190)),        
+
+        Planet(type='SUN', mass=5, position=[-100.0, -50.0, 0.0], velocity=[0.5, 0.5, 0.0], image=image_sun, radius=10, trace_color=(206, 66, 87)),
+    ]
+
+    config = Config(
+                dt=0.5, 
+                trace_line_length=70, 
+                screen_size=(1000, 800), 
+                background_image=image_universe,
+                rotation=[0.0, 0.0, 0],
+                scale=5)
 
     return planets, config
 
@@ -143,12 +164,13 @@ def solar():
 
     return planets, config
 
-#planets, config = solar()
+planets, config = solar()
 #planets, config = single()
 #planets, config = dual()
 #planets, config = three_1()
 #planets, config = three_2()
 #planets, config = three_3()
-planets, config = three_4()
+#planets, config = three_4()
+#planets, config = three_5()
 
 simulator.simulate(planets, config)
