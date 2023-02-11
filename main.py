@@ -14,7 +14,7 @@ image_universe = pygame.image.load('images/universe.jpg')
 def single():
     planets = [
         Planet(type='SUN', mass=2.0, position=[0.0, 0.0, 0.0], velocity=[0.1, 0.1, 0.0], image=image_sun, radius=20, trace_color=(206, 66, 87)),
-        Planet(type='EARTH', mass=0.1, position=[0.0, 8.0, 0.0], velocity=[-0.5, 0.0, 0.0], image=image_earth, radius=5, trace_color=(0, 100, 150)),
+        Planet(type='EARTH', mass=0.1, position=[0.0, 8.0, 0.0], velocity=[-0.5, 0.0, 0.0], image=image_uranus, radius=7, trace_color=(50, 130, 190)),
     ]
 
     config = Config(
@@ -29,9 +29,9 @@ def single():
 
 def dual():
     planets = [
-        Planet(type='SUN', mass=2.0, position=[0.0, 0.0, 0.0], velocity=[0.1, 0.1, 0.0], image=image_sun, radius=15, trace_color=(206, 66, 87)),
+        Planet(type='SUN', mass=2.0, position=[0.0, 0.0, 0.0], velocity=[0.1, 0.1, 0.0], image=image_sun, radius=20, trace_color=(206, 66, 87)),
         Planet(type='SUN', mass=1.0, position=[0.0, 8.0, 0.0], velocity=[-0.5, 0.0, 0.0], image=image_sun, radius=10, trace_color=(63, 151, 155)),
-        Planet(type='EARTH', mass=0.01, position=[-5.0, 25.0, 0.0], velocity=[-0.5, 0.0, 0.0], image=image_earth, radius=5, trace_color=(0, 100, 150)),
+        Planet(type='EARTH', mass=0.01, position=[-5.0, 25.0, 0.0], velocity=[-0.5, 0.0, 0.0], image=image_uranus, radius=5, trace_color=(0, 100, 150)),
     ]
 
     config = Config(
@@ -48,8 +48,8 @@ def three_1():
     planets = [
         Planet(type='SUN', mass=2.0, position=[0.0, 0.0, 0.0], velocity=[0.1, 0.1, 0.0], image=image_sun, radius=15, trace_color=(206, 66, 87)),
         Planet(type='SUN', mass=1.0, position=[0.0, 8.0, 0.0], velocity=[-0.5, 0.0, 0.0], image=image_sun, radius=10, trace_color=(63, 151, 155)),
-        Planet(type='SUN', mass=1.0, position=[0.0, -18.0, 0.0], velocity=[-0.5, 0.0, 0.0], image=image_sun, radius=10, trace_color=(249, 74, 41)),
-        Planet(type='EARTH', mass=0.01, position=[-5.0, 25.0, 0.0], velocity=[-0.4, 0.0, 0.0], image=image_earth, radius=5, trace_color=(0, 100, 150)),
+        Planet(type='SUN', mass=1.0, position=[0.0, -18.0, 0.0], velocity=[-0.5, 0.0, 0.0], image=image_sun, radius=10, trace_color=(201, 180, 32)),
+        Planet(type='EARTH', mass=0.01, position=[-5.0, 25.0, 0.0], velocity=[-0.4, 0.0, 0.0], image=image_uranus, radius=5, trace_color=(0, 100, 150)),
     ]
 
     config = Config(
@@ -104,13 +104,13 @@ def three_4():
         Planet(type='SUN', mass=1.2, position=[0.0, 0.0, 0.0], velocity=[0, 0.0, 0.0], image=image_sun, radius=12, trace_color=(206, 66, 87)),
         Planet(type='EARTH', mass=0.00001, position=[0.0, 5.0, 0.0], velocity=[-0.5, 0.0, 0.0], image=image_earth, radius=5, trace_color=(0, 100, 150)),
         Planet(type='EARTH', mass=0.00001, position=[0.0, -10.0, 0.0], velocity=[-0.5, 0.0, 0.0], image=image_earth, radius=5, trace_color=(0, 100, 150)),
-        Planet(type='SUN', mass=1.0, position=[0.0, 13.0, 0.0], velocity=[-0.2, 0.0, 0.0], image=image_sun, radius=10, trace_color=(63, 151, 155)),
-        Planet(type='SUN', mass=1.0, position=[0.0, 30.0, 0.0], velocity=[0.2, 0.0, 0.0], image=image_sun, radius=10, trace_color=(201, 180, 32)),
+        Planet(type='SUN', mass=1.0, position=[0.0, 13.0, 0.0], velocity=[-0.2, 0.0, 0.0], image=image_sun, radius=10, trace_color=(201, 180, 32)),
+        Planet(type='SUN', mass=1.0, position=[0.0, 30.0, 0.0], velocity=[0.2, 0.0, 0.0], image=image_sun, radius=10, trace_color=(63, 151, 155)),
     ]
 
     config = Config(
                 dt=0.5, 
-                trace_line_length=50, 
+                trace_line_length=70, 
                 screen_size=(1000, 800), 
                 background_image=image_universe,
                 rotation=[1.1, 0.2, 0],
@@ -143,12 +143,12 @@ def solar():
 
     return planets, config
 
-planets, config = solar()
+#planets, config = solar()
 #planets, config = single()
 #planets, config = dual()
 #planets, config = three_1()
 #planets, config = three_2()
 #planets, config = three_3()
-#planets, config = three_4()
+planets, config = three_4()
 
 simulator.simulate(planets, config)
