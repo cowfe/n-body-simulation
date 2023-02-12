@@ -1,7 +1,9 @@
 # n-body-simulation
-Run: python main.py
-Dependency: numpy, pygame
-Files:
+### Run
+python main.py
+### Dependency
+numpy, pygame
+### Files
 - main.py: parameters
 - data.py: data model
 - simulator.py: drawing
